@@ -24,11 +24,12 @@ class Util
     {
         // list of methods: method_name => alias
         $methods = [
-            'pluralize' => 'pl',
-            'oxfordComma' => 'impl',
-            'hasValue' => 'ex',
-            'equatesTo' => 'eq',
-            'dateFormatConvert' => 'df',
+            'numerate' => 'num',
+            'oxfordComma' => 'oxford',
+            'hasValue' => 'exists',
+            'equatesTo' => 'equate',
+            'dateFormatConvert' => 'datef',
+            'implode' => 'implode',
         ];
         $function_map = [];
 
@@ -36,6 +37,9 @@ class Util
         foreach( $methods as $method => $alias ){
             if( method_exists(static::class,$method) ){
                 $function_map[($use_alias?$alias:$method)] = static::class . "::{$method}";
+            }
+            elseif( function_exists($method) ){
+                $function_map[($use_alias?$alias:$method)] = $method;
             }
         }
 
@@ -94,7 +98,7 @@ class Util
      * @param $plural
      * @return mixed
      */
-    static public function pluralize( $value, $singular, $plural){
+    static public function numerate( $value, $singular, $plural){
         $count = is_array($value)
             ? count($value)
             : (
