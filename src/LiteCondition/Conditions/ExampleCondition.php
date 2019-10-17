@@ -23,9 +23,9 @@ class ExampleCondition extends BaseCondition
     protected function templates()
     {
         return [
-            'main' => 'Who am I? First is the {{$first}}, and second is the {{$second}}',
-            'first_only' => 'Who am I? First is the {{$first}}',
-            'second_only' => 'Who am I? Second is the {{$second}}',
+            'main' => 'Who am I? First is the {{$first}}, and second is the {{$second}}.',
+            'first_only' => 'Who am I? First is the {{$first}}.',
+            'second_only' => 'Who am I? Second is the {{$second}}.',
         ];
     }
 
