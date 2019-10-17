@@ -15,6 +15,9 @@
     "autoload": {
         "psr-4": {
             "LiteCondition\\": "src/LiteCondition/"
+        },
+        "psr-0": {
+            "Tests\\": "tests/"
         }
     }
 }
