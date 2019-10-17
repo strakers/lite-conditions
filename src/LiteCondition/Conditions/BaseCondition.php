@@ -7,6 +7,7 @@
  */
 namespace LiteCondition\Conditions;
 use LiteCondition\Utils\Template;
+use LiteCondition\Packages\BasePackage;
 
 abstract class BaseCondition
 {
@@ -14,7 +15,7 @@ abstract class BaseCondition
     
     /**
      * Process logic and output text
-     * @return string
+     * @return BasePackage
      */
     abstract protected function resolve();
 
