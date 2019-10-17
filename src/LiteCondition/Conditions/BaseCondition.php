@@ -44,7 +44,7 @@ abstract class BaseCondition
      * @param string $name
      * @return string
      */
-    protected function getTemplate( $name = '' )
+    public function getTemplate( $name = '' )
     {
         $templates = $this->templates();
         if( array_key_exists($name, $templates) ){
