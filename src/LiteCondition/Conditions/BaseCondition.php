@@ -17,7 +17,7 @@ abstract class BaseCondition
      * Process logic and output text
      * @return BasePackage
      */
-    abstract protected function resolve();
+    abstract public function resolve();
 
     /**
      * Pass template and data to template processor
