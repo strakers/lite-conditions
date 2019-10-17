@@ -11,7 +11,7 @@ namespace LiteCondition\Conditions;
 class ExampleCondition extends BaseCondition
 {
 
-    public function __construct( $first, $second )
+    public function __construct( $first = '', $second = '' )
     {
         $this->vars['first'] = $first;
         $this->vars['second'] = $second;
