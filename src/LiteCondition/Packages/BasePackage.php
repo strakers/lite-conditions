@@ -7,12 +7,8 @@
  */
 namespace LiteCondition\Packages;
 
-abstract class BasePackage
+abstract class BasePackage implements PackageInterface
 {
-    abstract public function deliver();
-
-    abstract static public function make();
-
     static public function makeEmpty(){
         return new static();
     }
