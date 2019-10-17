@@ -20,7 +20,7 @@ class Template
      * Replace placeholders in a template with actual data
      * @param $template
      * @param $data
-     * @return mixed
+     * @return string
      * @throws \ErrorException
      */
     static public function parse( $template, $data )
