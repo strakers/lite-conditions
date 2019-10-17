@@ -1,0 +1,20 @@
+{
+    "name": "strakez/lite-conditions",
+    "description": "A light package for outputting text based on logical conditions",
+    "type": "library",
+    "require": {
+        "php": ">=5.6.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "strakers",
+            "email": "contact@strakez.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "LiteCondition\\": "src/LiteCondition/"
+        }
+    }
+}
