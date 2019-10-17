@@ -3,14 +3,46 @@
 include_once dirname(__DIR__).'/vendor/autoload.php';
 use LiteCondition\Conditions\ExampleCondition;
 
-$condition1 = new ExampleCondition('1st','2nd');
-$text1 = $condition1->resolve();
-var_dump($text1);
+$condition = [];
+$text = [];
+$i = 0;
 
-$condition2 = new ExampleCondition('1st');
-$text2 = $condition2->resolve();
-var_dump($text2);
+$condition[$i] = new ExampleCondition('1st','2nd');
+$text[$i] = $condition[$i]->resolve();
+var_dump($text[$i]);
+$i++;
 
-$condition3 = new ExampleCondition(null,'2nd');
-$text3 = $condition3->resolve();
-var_dump($text3);
+$condition[$i] = new ExampleCondition('1st');
+$text[$i] = $condition[$i]->resolve();
+var_dump($text[$i]);
+$i++;
+
+$condition[$i] = new ExampleCondition(null,'2nd');
+$text[$i] = $condition[$i]->resolve();
+var_dump($text[$i]);
+$i++;
+
+$condition[$i] = new ExampleCondition(null,null,'eq');
+$text[$i] = $condition[$i]->resolve();
+var_dump($text[$i]);
+$i++;
+
+$condition[$i] = new ExampleCondition(null,null,'ex');
+$text[$i] = $condition[$i]->resolve();
+var_dump($text[$i]);
+$i++;
+
+$condition[$i] = new ExampleCondition(null,null,'pl');
+$text[$i] = $condition[$i]->resolve();
+var_dump($text[$i]);
+$i++;
+
+$condition[$i] = new ExampleCondition(null,null,'impl');
+$text[$i] = $condition[$i]->resolve();
+var_dump($text[$i]);
+$i++;
+
+$condition[$i] = new ExampleCondition(null,null,'date');
+$text[$i] = $condition[$i]->resolve();
+var_dump($text[$i]);
+$i++;
