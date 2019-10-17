@@ -28,8 +28,6 @@ class Template
         // temporarily store data
         static::$_temp_data = $data;
 
-        #var_dump($data);
-
         // declare variables for template replacing
         $originals = [];
         $replacements = [];
