@@ -28,7 +28,7 @@ class Util
             'oxfordComma' => 'impl',
             'hasValue' => 'ex',
             'equatesTo' => 'eq',
-            'dateFormatConvert' => 'date',
+            'dateFormatConvert' => 'df',
         ];
         $function_map = [];
 
@@ -89,12 +89,12 @@ class Util
 
     /**
      * Determines whether to use the singular or plural form depending on the value's count
-     * @param array $value
+     * @param mixed $value
      * @param $singular
      * @param $plural
      * @return mixed
      */
-    static public function pluralize( array $value, $singular, $plural){
+    static public function pluralize( $value, $singular, $plural){
         $count = is_array($value)
             ? count($value)
             : (
@@ -123,14 +123,15 @@ class Util
     }
 
     /**
-     * Determines whether to output a value if the value is truthy or falsey
+     * Determines whether to output a value if the value is empty
      * @param mixed $value
      * @param string $string
+     * @param string $default
      * @param bool $condition
      * @return string
      */
-    static public function hasValue( $value, $string, $condition = false ){
-        return empty($value)===$condition?$string:'';
+    static public function hasValue( $value, $string, $default = '', $condition = false ){
+        return static::equatesTo( empty($value), $condition, $string, $default );
     }
 
     /**
