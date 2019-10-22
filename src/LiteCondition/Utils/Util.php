@@ -127,15 +127,16 @@ class Util
     }
 
     /**
-     * Determines whether to output a value if the value is empty
+     * According to the assertion, determines whether to output $string if value exists. By default asserts value 
+     * should be true to output $string.
      * @param mixed $value
      * @param string $string
      * @param string $default
-     * @param bool $condition
+     * @param bool $assertion
      * @return string
      */
-    static public function hasValue( $value, $string, $default = '', $condition = false ){
-        return static::equatesTo( empty($value), $condition, $string, $default );
+    static public function hasValue( $value, $string, $default = '', $assertion = true ){
+        return static::equatesTo( !empty($value), !!$assertion, $string, $default );
     }
 
     /**
