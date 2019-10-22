@@ -47,6 +47,18 @@ class Template
                     if( array_key_exists($fn, $functions) && is_callable($functions[$fn])){
                         $function = $functions[$fn];
                         $arguments = array_map([static::class,'str2var'],explode('|', $arg_string));
+
+                        // convert boolean and numeric values from strings
+                        foreach($arguments as &$arg){
+                            if($arg === 'true' || $arg === 'false'){
+                                $arg = filter_var($arg, FILTER_VALIDATE_BOOLEAN);
+                            }
+                            elseif(is_numeric($arg)){
+                                $arg = strpos($arg,'.')&&strlen(substr($arg,strpos($arg,'.')+1))?(float)$arg:(int)$arg;
+                            }
+                        }
+
+                        // perform replacements
                         $replacements[$i] = call_user_func_array($function,$arguments);
                     }
                     else {
