@@ -89,7 +89,7 @@ class Template
     {
         $trimmed = trim($string);
         $private_denotation = '__';
-        if( strpos($trimmed,'$') === 0 && preg_match("/([a-zA-Z0-9]+)/",$string,$match) ){
+        if( strpos($trimmed,'$') === 0 && preg_match("/([a-zA-Z0-9_]+)/",$string,$match) ){
             $key = end($match);
             if( array_key_exists($key, static::$_temp_data)){
                 return static::$_temp_data[$key];
