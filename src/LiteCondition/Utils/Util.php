@@ -160,10 +160,8 @@ class Util
      */
     static public function dateFormatConvert( $dateString, $startFormat = 'm/d/Y', $endFormat = self::DEFAULT_DATE_FORMAT )
     {
-        $zone = new \DateTimeZone('America/New_York');
         $date = \DateTime::createFromFormat($startFormat, $dateString);
         if($date) {
-            $date->setTimezone($zone);
             return $date->format($endFormat);
         }
         return $dateString;
