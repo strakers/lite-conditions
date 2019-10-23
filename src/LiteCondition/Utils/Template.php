@@ -43,7 +43,7 @@ class Template
 
                 // if filter function
                 if( strpos($match,':') !== false ){
-                    list($fn,$arg_string) = explode(':',$match);
+                    list($fn,$arg_string) = explode(':',$match,2);
                     if( array_key_exists($fn, $functions) && is_callable($functions[$fn])){
                         $function = $functions[$fn];
                         $arguments = array_map([static::class,'str2var'],explode('|', $arg_string));
